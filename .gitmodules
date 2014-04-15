@@ -1,0 +1,6 @@
+[submodule "lib/ckeditor-dev"]
+	path = lib/ckeditor-dev
+	url = https://github.com/ckeditor/ckeditor-dev.git
+[submodule "lib/dojo"]
+	path = lib/dojo
+	url = https://github.com/dojo/dojo.git
