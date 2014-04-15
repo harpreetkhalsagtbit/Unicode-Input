@@ -31,8 +31,8 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 						    instanceReady: function( evt ) {
 								editor.document.on('keypress', function(e) {
 									e.data.preventDefault(); // this will prevent the default action for any event
-									var word = inputTool.getCurrentWord(editor)||'';
 									var currentChar = String.fromCharCode(e.data.getKey())
+									var word = inputTool.getCurrentWord(editor, lang.collateStrings(currentChar))||'';
 									editor.insertText(word +  lang.collateStrings(currentChar))
 								});
 						    }
