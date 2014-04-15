@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.md or http://ckeditor.com/license
+-->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Simple Editor Example</title>
+	<script src="../ckeditor-dev/ckeditor.js"></script>
+    <script data-dojo-config="async: 1, isDebug: 0" src="../dojo/dojo.js"></script>
+	<link href="../ckeditor-dev/samples/sample.css" rel="stylesheet">
+	<script>
+
+
+	</script>
+    <script>
+        require (['dojo/_base/declare', "core/inputTool", "core/lang/punjabi", "dojo/ready"],function (declare, inputTool, lang, ready){
+			ready(function(){
+			// deal with widgets here
+				var editor;
+				// If we already have an editor, let's destroy it first.
+				if ( editor )
+					editor.destroy( true );
+
+				// Create the editor again, with the appropriate settings.
+				editor = CKEDITOR.replace( 'editor1',
+					{
+						customConfig : '../tests/config.js',
+						on: {
+						    instanceReady: function( evt ) {
+								editor.document.on('keypress', function(e) {
+									e.data.preventDefault(); // this will prevent the default action for any event
+									var word = inputTool.getCurrentWord(editor)||'';
+									var currentChar = String.fromCharCode(e.data.getKey())
+									editor.insertText(word +  lang.collateStrings(currentChar))
+								});
+						    }
+						}
+					});
+				CKEDITOR.config.forcePasteAsPlainText = true;
+			});
+        })
+    </script>
+</head>
+<body>
+	<form>
+		<p>
+			<br>
+			<textarea cols="80" id="editor1" name="editor1" rows="10"><p></p>
+</textarea>
+		</p>
+	</form>
+	<div id="footer">
+		<hr>
+		<p>
+			Powered By CKEditor - The text editor for the Internet - <a class="samples" href="http://ckeditor.com/">http://ckeditor.com</a>
+		</p>
+		<p id="copy">
+			Copyright &copy; 2014, <a class="samples" href="https://github.com/harpreetkhalsagtbit/Unicode-Input">Unicode-Input</a>
+		</p>
+	</div>
+</body>
+</html>
