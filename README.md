@@ -12,5 +12,7 @@ Editor for **Local Indian Languages** using [Unicode] (http://www.unicode.org/)
 1. [✓] Direct Unicode Input from Keyboard.
 2. [✓] Input compatible with Punjabi Unicode - eg: Matras.
 3. [✓] Input at any Position.
-4. [ ] On Paste - Convert to Unicode.
+4. [✓] On Paste - Convert to Unicode.
+5. [ ] API File and Fix RegExp for missing characters
+6. [ ] Algorithm or Easy Tool/Way to Map unicode with font
 5. [ ] Add Two diffrent Punjabi Fonts with Different KeyBoard
