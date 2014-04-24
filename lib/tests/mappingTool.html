@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.md or http://ckeditor.com/license
+-->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Simple Editor Example</title>
+    <script data-dojo-config="async: 1, isDebug: 0" src="../dojo/dojo.js"></script>
+	<link href="../ckeditor-dev/samples/sample.css" rel="stylesheet">
+    <link rel="stylesheet" href="../dijit/themes/dijit.css" />
+    <link rel="stylesheet" href="../dijit/themes/claro/claro.css" />
+	<style>
+
+		.tableContainer-labelCell {
+			width: 20px !important;
+			font-size: 22px
+		}
+		.dijitButtonText {
+			font-size: 22px
+		}
+	</style>
+	<script>
+
+	</script>
+    <script>
+        require (['dojo/_base/declare', "dojo/_base/window", "dijit/layout/BorderContainer", "dijit/layout/ContentPane", "dojox/layout/TableContainer", "dijit/form/Form", "dijit/form/TextBox", "dijit/form/Button", "dojo/ready"],
+        	function (declare, win, BorderContainer, ContentPane, ResponsiveGridContainer, Form, TextBox, Button, ready){
+			ready(function(){
+				// create a BorderContainer as the top widget in the hierarchy
+				   var bc = new BorderContainer({
+				   	style: "height: 800px; width:800px"
+				   },"mainDiv");
+
+				   // create a ContentPane as the left pane in the BorderContainer
+				   var cp1 = new ContentPane({
+				       region: "left",
+					   	style: "position: relative; height: 800px; width:800px"
+				   });
+				   bc.addChild(cp1);
+				   var frm = new Form({
+				   	id:'frm'
+				   });
+				   cp1.addChild(frm)
+				   var cp2 = new ContentPane({
+				       region: "left",
+				       style: "overflow:auto"
+				   });
+				   frm.domNode.appendChild(cp2.domNode);
+   				   var rcg = new ResponsiveGridContainer({
+				       region: "left",
+				       cols:5,
+				       style: "overflow:auto"
+				   });
+				   cp2.addChild(rcg);
+
+   				   var rcg2 = new ResponsiveGridContainer({
+				       region: "left",
+				       cols:5,
+				       style: "overflow:auto"
+				   });
+				   cp2.addChild(rcg2);
+
+					// var unicodeArr = 'ੳਬਚਦੲਡਗਹਜਕਲਮਨਪਤਰਸਟਵਣਜ਼ਅਭਛਧਏਢਘਹਝਖਲ਼ਫਥਸ਼ਠੜਮਯਗ਼ਿੋੁਾੇੀੰਂੌ੍ੂੈੱ'.split('')
+					// var englishStringArr = 'abcdefghjklmnpqrstvxzABCDEFGHJKLPQSTVWXZiouwyIMNORUY` '.split('')
+					var currentTextBox = '';
+
+					var unicodeJSON = {
+						"48":'ੳ',
+						"49":'ਬ',
+						"50":'ਚ',
+						"51":'ਦ',
+						"52":'ੲ',
+						"53":'ਡ',
+						"54":'ਗ',
+						"55":'ਹ',
+						"56":'ਜ',
+						"57":'ਕ',
+						"65":'ਲ',
+						"66":'ਮ',
+						"67":'ਨ',
+						"68":'ਪ',
+						"69":'ਤ',
+						"70":'ਰ',
+						"71":'ਸ',
+						"72":'ਟ',
+						"73":'ਵ',
+						"74":'ਣ',
+						"75":'ਜ਼',
+						"76":'ਅ',
+						"77":'ਭ',
+						"78":'ਛ',
+						"79":'ਧ',
+						"80":'ਢ',
+						"81":'ਘ',
+						"82":'ਝ',
+						"83":'ਖ',
+						"84":'ਲ਼',
+						"85":'ਫ',
+						"86":'ਥ',
+						"87":'ਸ਼',
+						"88":'ਠ',
+						"89":'ੜ',
+						"90":'ਮ',
+						"91":"ਯ",
+						"93":"ਗ਼",
+						"92":"ਿ",
+						"124":"ੋ",
+						"123":"ੁ",
+						"125":"ਾ",
+						"59":"ੇ",
+						"58":"ੀ",
+						"34":"ੰ",
+						"39":"ਂ",
+						"44":"ੌ",
+						"60":"੍",
+						"46":"ੂ",
+						"62":"ੈ",
+						"33":"ੱ",
+						"64":"@",
+						"35":"#",
+						"36":"$",
+						"37":"%",
+						"94":"^",
+						"38":"&",
+						"42":"*",
+						"40":"(",
+						"41":")",
+						"45":"-",
+						"95":"_",
+						"61":"=",
+						"43":"+"
+					}
+					var engJSON = {
+						"48":'0',
+						"49":'1',
+						"50":'2',
+						"51":'3',
+						"52":'4',
+						"53":'5',
+						"54":'6',
+						"55":'7',
+						"56":'8',
+						"57":'9',
+						"65":'a',
+						"66":'b',
+						"67":'c',
+						"68":'d',
+						"69":'e',
+						"70":'f',
+						"71":'g',
+						"72":'h',
+						"73":'i',
+						"74":'j',
+						"75":'k',
+						"76":'l',
+						"77":'m',
+						"78":'n',
+						"79":'o',
+						"80":'p',
+						"81":'q',
+						"82":'r',
+						"83":'s',
+						"84":'t',
+						"85":'u',
+						"86":'v',
+						"87":'w',
+						"88":'x',
+						"89":'y',
+						"90":'z',
+						"91":"[",
+						"93":"]",
+						"92":"\\",
+						"124":"\|",
+						"123":"{",
+						"125":"}",
+						"59":";",
+						"58":":",
+						"34":"\"",
+						"39":"\'",
+						"44":",",
+						"60":"<",
+						"46":".",
+						"62":">",
+						"33":"!",
+						"64":"@",
+						"35":"#",
+						"36":"$",
+						"37":"%",
+						"94":"^",
+						"38":"&",
+						"42":"*",
+						"40":"(",
+						"41":")",
+						"45":"-",
+						"95":"_",
+						"61":"=",
+						"43":"+"
+					}
+				   for(each in unicodeJSON) {
+					   	var textBox = new TextBox({
+					   		label:unicodeJSON[each],
+					   		value:'',
+					   		name:unicodeJSON[each],
+					   		style:"width:5em; padding:left:20px; font-size: 22px",
+					   		onClick:function() {
+					   			currentTextBox = this;
+					   		}
+					   	})
+					   	rcg.addChild(textBox)
+					}
+				 //   for(each in engJSON) {
+					//    	var button = new Button({
+					//    		label:"_ " + engJSON[each] + " _",
+					//    		onClick:function() {
+					//    			console.log('asds', this.get('label'))
+					//    			if(currentTextBox) {
+					// 	   			currentTextBox.set('value', this.get('value'))
+					//    			}
+					//    		}
+					//    	})
+					//    	cp2.addChild(button)
+					// }
+
+				   	var button = new Button({
+				   		label:"Submit",
+				   		onClick:function() {
+				   			var formVal = frm.get('value')
+				   			var obj = {};
+							for(each in formVal) {
+								if(formVal[each] != "" &&  !(formVal[each] instanceof Array)) {
+									obj[formVal[each]] = each
+								}
+							}
+							console.log(obj, 'obj')
+				   		}
+				   	})
+				   	cp2.addChild(button)
+				   //var bodyDom = win.body();
+				   // put the top level widget into the document, and then call startup()
+				   //bodyDom.appendChild(bc.domNode);
+				   bc.startup();
+			});
+        })
+    </script>
+</head>
+<body>
+	<div id="mainDiv"></div>
+	<div id="footer">
+		<hr>
+		<p>
+			Powered By RCorp - Unicode - Font Mapping Tool - <a class="samples" href="https://github.com/harpreetkhalsagtbit/Unicode-Input">Unicode-Input</a>
+		</p>
+		<p id="copy">
+			Copyright &copy; 2014, <a class="samples" href="https://github.com/harpreetkhalsagtbit/Unicode-Input">Unicode-Input</a>
+		</p>
+	</div>
+</body>
+</html>
