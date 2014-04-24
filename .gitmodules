@@ -4,3 +4,12 @@
 [submodule "lib/dojo"]
 	path = lib/dojo
 	url = https://github.com/dojo/dojo.git
+[submodule "lib/dijit"]
+	path = lib/dijit
+	url = https://github.com/dojo/dijit.git
+[submodule "lib/dojox"]
+	path = lib/dojox
+	url = https://github.com/dojo/dojox.git
+[submodule "lib/dijitx"]
+	path = lib/dijitx
+	url = https://github.com/rcorp/dijitx.git
