@@ -13,7 +13,7 @@ Editor for **All Mother Toungues in Universe** using [Unicode] (http://www.unico
 2. [✓] Input compatible with Punjabi Unicode - eg: Matras.
 3. [✓] Input at any Position.
 4. [✓] On Paste - Convert to Unicode.
-5. [ ] Algorithm or Easy Tool/Way to Map unicode with font
+5. [ ] Algorithm or Easy Tool/Way to Map unicode with font - Doing
 6. [ ] API File and Fix RegExp for missing characters
 7. [ ] Add Two diffrent Punjabi Fonts with Different KeyBoard
 
