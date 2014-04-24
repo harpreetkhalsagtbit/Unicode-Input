@@ -31,13 +31,14 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 						    instanceReady: function( evt ) {
 								editor.document.on('keypress', function(e) {
 									e.data.preventDefault(); // this will prevent the default action for any event
+									console.log(e.data.getKey())
 									var currentChar = String.fromCharCode(e.data.getKey())
-									var word = inputTool.insertUnicodeCharacter(editor, lang.collateStrings(currentChar))||lang.collateStrings(currentChar);
+									var word = inputTool.insertUnicodeCharacter(editor, lang.getUnicodeChar(currentChar))||lang.getUnicodeChar(currentChar);
 									console.log(word)
 								});
 								editor.on('paste', function(evt) {
 								    // Update the text
-								    evt.editor.setData(lang.convertToUnicode(evt.data.dataValue));
+								    evt.editor.setData(lang.pasteToUnicode(evt.data.dataValue));
 								}, editor.element.$);
 						    }
 						}
