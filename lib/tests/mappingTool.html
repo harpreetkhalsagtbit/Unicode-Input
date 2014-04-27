@@ -62,75 +62,67 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 				   });
 				   cp2.addChild(rcg2);
 
-					// var unicodeArr = 'ੳਬਚਦੲਡਗਹਜਕਲਮਨਪਤਰਸਟਵਣਜ਼ਅਭਛਧਏਢਘਹਝਖਲ਼ਫਥਸ਼ਠੜਮਯਗ਼ਿੋੁਾੇੀੰਂੌ੍ੂੈੱ'.split('')
-					// var englishStringArr = 'abcdefghjklmnpqrstvxzABCDEFGHJKLPQSTVWXZiouwyIMNORUY` '.split('')
 					var currentTextBox = '';
 
 					var unicodeJSON = {
-						"48":'ੳ',
-						"49":'ਬ',
-						"50":'ਚ',
-						"51":'ਦ',
-						"52":'ੲ',
-						"53":'ਡ',
-						"54":'ਗ',
-						"55":'ਹ',
-						"56":'ਜ',
-						"57":'ਕ',
-						"65":'ਲ',
-						"66":'ਮ',
-						"67":'ਨ',
-						"68":'ਪ',
-						"69":'ਤ',
-						"70":'ਰ',
-						"71":'ਸ',
-						"72":'ਟ',
-						"73":'ਵ',
-						"74":'ਣ',
-						"75":'ਜ਼',
-						"76":'ਅ',
-						"77":'ਭ',
-						"78":'ਛ',
-						"79":'ਧ',
-						"80":'ਢ',
-						"81":'ਘ',
-						"82":'ਝ',
-						"83":'ਖ',
-						"84":'ਲ਼',
-						"85":'ਫ',
-						"86":'ਥ',
-						"87":'ਸ਼',
-						"88":'ਠ',
-						"89":'ੜ',
-						"90":'ਮ',
-						"91":"ਯ",
-						"93":"ਗ਼",
-						"92":"ਿ",
-						"124":"ੋ",
-						"123":"ੁ",
-						"125":"ਾ",
-						"59":"ੇ",
-						"58":"ੀ",
-						"34":"ੰ",
-						"39":"ਂ",
-						"44":"ੌ",
-						"60":"੍",
-						"46":"ੂ",
-						"62":"ੈ",
-						"33":"ੱ",
-						"64":"@",
-						"35":"#",
-						"36":"$",
-						"37":"%",
-						"94":"^",
-						"38":"&",
-						"42":"*",
-						"40":"(",
-						"41":")",
-						"45":"-",
-						"95":"_",
-						"61":"=",
-						"43":"+"
+						"1":'ੳ',
+						"2":'ਅ',
+						"3":'ੲ',
+						"4":'ਸ',
+						"5":'ਹ',
+						"6":'ਕ',
+						"7":'ਖ',
+						"8":'ਗ',
+						"9":'ਘ',
+						"10":'ਙ',
+						"11":'ਚ',
+						"12":'ਛ',
+						"13":'ਜ',
+						"14":'ਝ',
+						"15":'ਞ',
+						"16":'ਟ',
+						"17":'ਠ',
+						"18":'ਡ',
+						"19":'ਢ',
+						"20":'ਣ',
+						"21":'ਤ',
+						"22":'ਥ',
+						"23":'ਦ',
+						"24":'ਧ',
+						"25":'ਨ',
+						"26":'ਪ',
+						"27":'ਫ',
+						"28":'ਬ',
+						"29":'ਭ',
+						"30":'ਮ',
+						"31":'ਯ',
+						"32":'ਰ',
+						"33":'ਲ',
+						"34":'ਵ',
+						"35":'ੜ',
+						"36":"ਸ਼",
+						"37":"ਖ਼",
+						"38":"ਗ਼",
+						"39":"ਜ਼",
+						"40":"ਫ਼",
+						"41":"ਲ਼",
+						"42":"ਾ",
+						"43":"ਾਂ",
+						"44":"ਿ",
+						"55":"ੀ",
+						"46":"ੇ",
+						"47":"ੈ",
+						"48":"ੋ",
+						"49":"ੌ",
+						"60":"ਂ",
+						"61":"ੰ",
+						"62":"ੱ",
+						"63":"੍ਹ",
+						"64":"੍ਰ",
+						"66":"ੁ",
+						"67":"ੂ",
+						"68":"।",
+						"69":"॥"
 					}
 					var engJSON = {
 						"48":'0',
@@ -203,25 +195,10 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 					   		label:unicodeJSON[each],
 					   		value:'',
 					   		name:unicodeJSON[each],
-					   		style:"width:5em; padding:left:20px; font-size: 22px",
-					   		onClick:function() {
-					   			currentTextBox = this;
-					   		}
+					   		style:"width:5em; padding:left:20px; font-size: 22px"
 					   	})
 					   	rcg.addChild(textBox)
 					}
-				 //   for(each in engJSON) {
-					//    	var button = new Button({
-					//    		label:"_ " + engJSON[each] + " _",
-					//    		onClick:function() {
-					//    			console.log('asds', this.get('label'))
-					//    			if(currentTextBox) {
-					// 	   			currentTextBox.set('value', this.get('value'))
-					//    			}
-					//    		}
-					//    	})
-					//    	cp2.addChild(button)
-					// }
 
 				   	var button = new Button({
 				   		label:"Submit",
@@ -233,13 +210,10 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 									obj[formVal[each]] = each
 								}
 							}
-							console.log(obj, 'obj')
+							console.log(JSON.stringify(obj))
 				   		}
 				   	})
 				   	cp2.addChild(button)
-				   //var bodyDom = win.body();
-				   // put the top level widget into the document, and then call startup()
-				   //bodyDom.appendChild(bc.domNode);
 				   bc.startup();
 			});
         })
