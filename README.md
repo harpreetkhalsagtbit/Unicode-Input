@@ -17,7 +17,9 @@ Editor for **All Mother Toungues in Universe** using [Unicode] (http://www.unico
 6. [ ] API File and Fix RegExp for missing characters
 7. [ ] Add Two diffrent Punjabi Fonts with Different KeyBoard
 
-
+##Demo Images##
+![Alt text](/assets/Demo%20Page.png?raw=true)
+![Alt text](/assets/before%20and%20after.png?raw=true)
 
 ##License##
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
