@@ -15,8 +15,12 @@ Editor for **All Mother Toungues in Universe** using [Unicode] (http://www.unico
 4. [✓] On Paste - Convert to Unicode.
 5. [✓] Algorithm or Easy Tool/Way to Map unicode with font.
 6. [✓] Add API File and Fix RegExp for missing characters.
-7. [✓ ] Add Two diffrent Punjabi Fonts with Different KeyBoard
-8. [ ] Release Version 0.8 - **Doing**
+7. [✓] Add Two diffrent Punjabi Fonts with Different KeyBoard
+8. [✓ ] Release Version  **v0.0.8-beta**
+
+##Info##
+After GurbaniWebThick Font - Time needed to integrate DRChatrickWeb Font was just around Half an Hour
+
 
 ##Demo Images##
 ![Alt text](/assets/Demo%20Page.png?raw=true)
