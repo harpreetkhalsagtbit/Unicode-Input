@@ -19,7 +19,7 @@ Editor for **All Mother Toungues in Universe** using [Unicode] (http://www.unico
 8. [✓ ] Release Version  **v0.0.8-beta**
 
 ##Info##
-After GurbaniWebThick Font - Time needed to integrate DRChatrickWeb Font was just around Half an Hour
+After GurbaniWebThick Font - It took only Half an Hour of time to integrate DRChatrickWeb Font
 
 
 ##Demo Images##
