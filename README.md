@@ -12,7 +12,10 @@ Editor for **All Mother Toungues in Universe** using [Unicode] (http://www.unico
 http://blogs.reuters.com/india/2013/09/07/india-speaks-780-languages-220-lost-in-last-50-years-survey/
 
 ##Gift for your Content Writer's##
-**Don't Force** your **content writer** to type in a particular font. Let them choose the font they like and allow us to convert their **masterpiece** into **Unicode**.
+**Don't Force** your **content writer** to type in a particular font. Let them choose the font they like and allow us to 
+
+1. Make a Tool to type in Unicode Directly wih the KeyMapping(s) of the Font(s) they are **proficient** in.
+2. convert their **masterpiece**(already written text in diffrent fonts) into **Unicode**.
 
 ##Road Map##
 1. [✓] Direct Unicode Input from Keyboard.
