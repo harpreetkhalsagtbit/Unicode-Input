@@ -1,5 +1,5 @@
-Unicode-Input
-=============
+Unicode-Input(Hail you Mother Tongue)
+=======================================
 
 WYSIWYG Editor for typing Unicode Directly using [CK-Editor](https://github.com/ckeditor/ckeditor-dev)
 
@@ -7,6 +7,12 @@ Editor for **All Mother Toungues in Universe** using [Unicode] (http://www.unico
 
 1. Punjabi - In Progress
 2. Hindi - Planned
+
+##Why this Project?##
+http://blogs.reuters.com/india/2013/09/07/india-speaks-780-languages-220-lost-in-last-50-years-survey/
+
+##Gift for your Content Writer's##
+**Don't Force** your **content writer** to type in a particular font. Let them choose the font they like and allow us to convert their **masterpiece** into **Unicode**.
 
 ##Road Map##
 1. [✓] Direct Unicode Input from Keyboard.
@@ -20,7 +26,7 @@ Editor for **All Mother Toungues in Universe** using [Unicode] (http://www.unico
 
 ##Info##
 After GurbaniWebThick Font - It took only Half an Hour of time to integrate DRChatrickWeb Font
-
+Support for more Fonts coming soon.
 
 ##Demo Images##
 ![Alt text](/assets/Demo%20Page.png?raw=true)
