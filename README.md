@@ -1,7 +1,5 @@
-Unicode-Input
-==============
-##(Hail your Mother Tongue)##
-
+Unicode-Input(All Mother Tongues)
+=====================================
 WYSIWYG Editor for typing Unicode Directly using [CK-Editor](https://github.com/ckeditor/ckeditor-dev)
 
 Editor for **All Mother Toungues in Universe** using [Unicode] (http://www.unicode.org/)
