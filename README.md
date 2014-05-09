@@ -1,4 +1,4 @@
-Unicode-Input(Hail you Mother Tongue)
+Unicode-Input(Hail your Mother Tongue)
 =======================================
 
 WYSIWYG Editor for typing Unicode Directly using [CK-Editor](https://github.com/ckeditor/ckeditor-dev)
@@ -28,7 +28,7 @@ http://blogs.reuters.com/india/2013/09/07/india-speaks-780-languages-220-lost-in
 8. [✓ ] Release Version  **v0.0.8-beta**
 
 ##Info##
-After GurbaniWebThick Font - It took only Half an Hour of time to integrate DRChatrickWeb Font
+After GurbaniWebThick Font - It took only Half an Hour of time to integrate DRChatrickWeb Font.
 Support for more Fonts coming soon.
 
 ##Demo Images##
