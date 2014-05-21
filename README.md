@@ -31,6 +31,15 @@ After GurbaniWebThick Font - It took only Half an Hour of time to integrate DRCh
 
 Support for more Fonts coming soon.
 
+##Live Demo##
+Type in Directly or Copy Paste Text to Covert it to Unicode.
+
+**Gurbani Web Thick Font**
+http://goo.gl/1120LV
+
+**DRChatrikWebFont**
+http://goo.gl/QYjUYo
+
 ##Demo Images##
 ![Alt text](/assets/Demo%20Page.png?raw=true)
 ![Alt text](/assets/before%20and%20after.png?raw=true)
