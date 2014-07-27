@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.md or http://ckeditor.com/license
+-->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Simple Editor Example</title>
+    <script data-dojo-config="async: 1, isDebug: 0" src="../dojo/dojo.js"></script>
+    <link rel="stylesheet" href="../dijit/themes/dijit.css" />
+    <link rel="stylesheet" href="../dijit/themes/claro/claro.css" />
+	<style>
+
+		.tableContainer-labelCell {
+			width: 20px !important;
+			font-size: 22px
+		}
+		.dijitButtonText {
+			font-size: 22px
+		}
+	</style>
+	<script>
+
+	</script>
+    <script>
+        require (['dojo/_base/declare', "dojo/_base/window", "dijit/layout/BorderContainer", "dijit/layout/ContentPane", "dojox/layout/TableContainer", "dijit/form/Form", "dijit/form/TextBox", "dijit/form/Button", "dojo/ready"],
+        	function (declare, win, BorderContainer, ContentPane, ResponsiveGridContainer, Form, TextBox, Button, ready){
+			ready(function(){
+				// create a BorderContainer as the top widget in the hierarchy
+				   var bc = new BorderContainer({
+				   	style: "height: 800px; width:800px"
+				   },"mainDiv");
+
+				   // create a ContentPane as the left pane in the BorderContainer
+				   var cp1 = new ContentPane({
+				       region: "left",
+					   	style: "position: relative; height: 800px; width:800px"
+				   });
+				   bc.addChild(cp1);
+				   var frm = new Form({
+				   	id:'frm'
+				   });
+				   cp1.addChild(frm)
+				   var cp2 = new ContentPane({
+				       region: "left",
+				       style: "overflow:auto"
+				   });
+				   frm.domNode.appendChild(cp2.domNode);
+   				   var rcg = new ResponsiveGridContainer({
+				       region: "left",
+				       cols:5,
+				       style: "overflow:auto"
+				   });
+				   cp2.addChild(rcg);
+
+   				   var rcg2 = new ResponsiveGridContainer({
+				       region: "left",
+				       cols:5,
+				       style: "overflow:auto"
+				   });
+				   cp2.addChild(rcg2);
+
+					var unicodeArrPriority = ["ਁ", "ਂ", "ਃ", "ਔ", "ਐ", "ਆ", "ਅ", "ਏ", "ਇ", "ਈ", "ੲ", "ਓ", "ਊ", "ਉ", "ੳ", "ਕ", "ਖ", "ਗ", "ਘ", "ਙ", "ਚ", "ਛ", "ਜ", "ਝ", "ਞ", "ਟ", "ਠ", "ਡ", "ਢ", "ਣ", "ਤ", "ਥ", "ਦ", "ਧ", "ਨ", "ਪ", "ਫ", "ਬ", "ਭ", "ਮ", "ਯ", "ਰ", "ਲ", "ਲ਼", "ਵ੍", "ਵ", "ਸ਼", "ਸ", "ਹ", "ਾਂ", "਼", "ਾ", "ਿ", "ੀ", "ੁ", "ੂ", "ੇ", "ੈ", "ੋ", "ੌ", "੍", "ਖ਼", "ਗ਼", "ਜ਼", "ੜ", "ਫ਼", "੦", "੧", "੨", "੩", "੪", "੫", "੬", "੭", "੮", "੯", "ੰ", "ੱ", "ੴ", "।", "॥"]
+
+				   for(each in unicodeArrPriority) {
+					   	var textBox = new TextBox({
+					   		label:unicodeArrPriority[each],
+					   		value:'',
+					   		name:unicodeArrPriority[each],
+					   		style:"width:5em; padding:left:20px; font-size: 22px"
+					   	})
+					   	rcg.addChild(textBox)
+					}
+
+				   	var button = new Button({
+				   		label:"Submit",
+				   		onClick:function() {
+				   			var formVal = frm.get('value')
+				   			var objFontMap = {};
+				   			var objKeyMap = {};
+							for(each in formVal) {
+								if(formVal[each] != "" &&  !(formVal[each] instanceof Array)) {
+									objKeyMap[formVal[each]] = each
+								}
+							}
+							for (var i=0;i<unicodeArrPriority.length;i++) {
+								if(formVal[unicodeArrPriority[i]]) {
+									objFontMap[formVal[unicodeArrPriority[i]]] = unicodeArrPriority[i]
+								}
+							}
+							console.log('objFontMap', JSON.stringify(objFontMap))
+							console.log('objKeyMap', JSON.stringify(objKeyMap))
+				   		}
+				   	})
+				   	cp2.addChild(button)
+				   bc.startup();
+			});
+        })
+    </script>
+</head>
+<body>
+	<div id="mainDiv"></div>
+	<div id="footer">
+		<hr>
+		<p>
+			Powered By RCorp - Unicode - Font Mapping Tool - <a class="samples" href="https://github.com/harpreetkhalsagtbit/Unicode-Input">Unicode-Input</a>
+		</p>
+		<p id="copy">
+			Copyright &copy; 2014, <a class="samples" href="https://github.com/harpreetkhalsagtbit/Unicode-Input">Unicode-Input</a>
+		</p>
+	</div>
+</body>
+</html>
