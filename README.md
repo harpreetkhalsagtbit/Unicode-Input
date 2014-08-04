@@ -7,8 +7,13 @@ Editor for **All Mother Toungues in Universe** using [Unicode] (http://www.unico
 1. Punjabi - In Progress
 2. Hindi - Planned
 
-##Supporting - [Mahankosh Unicode](https://github.com/harpreetkhalsagtbit/MahankoshUnicode)
+##Supporting##
+
+##[Mahankosh Unicode](https://github.com/harpreetkhalsagtbit/MahankoshUnicode)##
 <br>Converting Decoded fonts of Mahankosh pdf
+
+##[Larivaar Nitnem](https://github.com/harpreetkhalsagtbit/larivaarnitnem)##
+<br>Easy to read Larivaar Nitnem Bani App
 
 ##Why this Project?##
 http://blogs.reuters.com/india/2013/09/07/india-speaks-780-languages-220-lost-in-last-50-years-survey/
